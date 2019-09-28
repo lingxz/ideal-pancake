@@ -47,6 +47,15 @@ app.post('/user/:userid/profile', function(req, res) {
   res.send("OK")  
 })
 
+app.get("/everyone", function(req, res) {
+  const userids = getDirectories("../public/user/");
+  userids.forEach((userid) => {
+    const profile = JSON.parse(fs.readFileSync(getUserProfilePath(userid)).toString());
+    results.push(profile);
+  });
+  return res.json({"results": results});
+})
+
 app.get("/sellers", function(req, res) {
   const userids = getDirectories("../public/user/");
   const seller_ids = userids.filter((userid) => userid.startsWith("seller"));

@@ -26,6 +26,8 @@ export function matchTwoPeople(user1, user2) {
     .catch(console.log)
 }
 
-function checkMatch(seller_id) {
-  
+function checkMatch() {
+  fetch(api_endpoint + "/everyone", {
+    headers: { 'Access-Control-Allow-Origin': 'http://localhost:3000', method: 'GET' }
+  })
 }
