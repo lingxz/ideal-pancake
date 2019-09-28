@@ -42,7 +42,7 @@ class ProfileComponent extends Component {
     render() {
         return (
             <Box box-padding={"1.25rem"} style={{ height: "100vh", backgroundColor: "#fe5722" }} >
-                <Card>
+                <Card style={{borderRadius: "6px"}}>
                     <Level>
                         <Level.Item>
                             <Card.Image src={this.state.profile.profile_picture} alt="profile picture" ratio='1by1' style={{ maxWidth: 320, paddingTop: "1.5rem" }} />
