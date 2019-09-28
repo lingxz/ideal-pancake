@@ -83,14 +83,6 @@
     color: darkgray;
   }
   
-  .card > div {
-    height: 380px !important;
-  }
-  
-  .card {
-    height: 500px !important;
-  }
-  
   .slider-control-bottomcenter {
     bottom: -15px !important;
   }
