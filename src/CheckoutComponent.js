@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Heading, Table } from "react-bulma-components/full";
+import { Button, Heading, Table, Card } from "react-bulma-components/full";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign } from '@fortawesome/free-solid-svg-icons'
@@ -48,7 +48,7 @@ class CheckoutComponent extends Component {
   render() {
     console.log(this.state);
     return (
-      <div style={{ margin: "0.75rem" }}>
+      <Card style={{ borderRadius: "6px", margin: "1.25rem", padding: "1rem" }}>
         <Heading size={2}>Welcome back, {this.state.user}!</Heading>
         <Table>
           <tbody>
@@ -75,7 +75,7 @@ class CheckoutComponent extends Component {
           </tbody>
         </Table>
         <Button color='success'>Checkout</Button>
-      </div>
+      </Card>
     );
   }
 }
