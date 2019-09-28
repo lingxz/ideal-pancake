@@ -16,18 +16,6 @@ function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
-        <ul>
-          <li>
-            <Link to="/profile/buyer"> Buyer Profile </Link>
-          </li>
-          <li>
-            <Link to="/picker/buyer"> Picker </Link>
-          </li>
-          <li>
-            <Link to="/checkout/buyer"> Checkout </Link>
-          </li>
-        </ul>
-
         <Switch>
           <Route exact path='/profile/:userId' component={ProfileComponent}></Route>
           <Route exact path='/picker/:userId' component={PickerComponent}></Route>
