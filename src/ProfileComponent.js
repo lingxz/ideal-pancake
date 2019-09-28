@@ -16,6 +16,7 @@ class ProfileComponent extends Component {
                 "name": "user",
                 "role": "buyer",
                 "budget": "100",
+                "profile_picture": "https://bulma.io/images/placeholders/480x480.png",
                 "items": []
             }
         };
@@ -24,7 +25,9 @@ class ProfileComponent extends Component {
         fetch('/user/' + params.userId + '/profile.json')
             .then(res => res.json())
             .then((data) => {
-                this.setState({ profile: data })
+                if (data.name && data.budget) {
+                    this.setState({ profile: data });
+                }
             })
             .catch(console.log)
     }
@@ -35,7 +38,7 @@ class ProfileComponent extends Component {
                 <Card>
                     <Level>
                         <Level.Item>
-                            <Card.Image src={"/assets/azure-lin.jpg"} alt="profile picture" ratio='1by1' style={{ maxWidth: 320 }} is-flex="true" />
+                            <Card.Image src={this.state.profile.profile_picture} alt="profile picture" ratio='1by1' style={{ maxWidth: 320 }} />
                         </Level.Item>
                     </Level>
                     <Level>
