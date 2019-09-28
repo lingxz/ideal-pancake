@@ -2,6 +2,6 @@
     "id": "seller1",
     "name": "Joyful Petals",
     "role": "seller",
-    "items": [""],
+    "items": [],
     "budget": "100"
 }
