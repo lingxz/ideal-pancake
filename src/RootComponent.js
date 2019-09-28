@@ -11,6 +11,9 @@ class RootComponent extends Component {
                 <li><Button><Link to={"/profile/seller2"}>Seller 2 Profile</Link></Button></li>
                 <li><Button><Link to={"/picker/buyer"}>Buyer Picker</Link></Button></li>
                 <li><Button><Link to={"/picker/seller1"}>Seller 1 Picker</Link></Button></li>
+                <li><Button><Link to={"/checkout/buyer"}>Buyer Checkout</Link></Button></li>
+                <li><Button><Link to={"/checkout/buyer1"}>Buyer1 Checkout</Link></Button></li>
+
             </ul>
         )
     }

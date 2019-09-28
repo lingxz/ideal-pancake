@@ -1,4 +1,4 @@
-const api_endpoint = "http://localhost:8080";
+const api_endpoint = process.env.API_URL ? process.env.API_URL : "http://localhost:8080";
 
 
 export function matchTwoPeople(user1, user2) {
