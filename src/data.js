@@ -15,7 +15,20 @@ export default [
     "bad product"
   ]
 },
-
+{  
+  "id": "seller4",
+  "name": "Lucky Hotpot",
+  "role": "seller",
+  "items": [""],
+  "budget": "100",
+  "text": "Delicious Hotpot",
+  "pics": [
+    "https://images.unsplash.com/photo-1447129568466-afbabc829d86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
+  ],
+  "stars": 3,
+  "reviews": [
+  ]
+},
 {
   "id": "seller1",
   "name": "Joyful Petals",
