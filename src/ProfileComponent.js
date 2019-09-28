@@ -34,7 +34,7 @@ class ProfileComponent extends Component {
 
     render() {
         return (
-            <Box box-padding={"1.25rem"} style={{ height: "100vh" }} >
+            <Box box-padding={"1.25rem"} style={{ height: "100vh", backgroundColor: "#fe5722" }} >
                 <Card>
                     <Level>
                         <Level.Item>
