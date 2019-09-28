@@ -1,7 +1,7 @@
 {
-  "id": "seller1",
-  "name": "Joyful Petals",
-  "role": "seller",
-  "items": [""],
-  "budget": "100"
+    "id": "seller1",
+    "name": "Joyful Petals",
+    "role": "seller",
+    "items": [],
+    "budget": "100"
 }
