@@ -8,6 +8,7 @@ import {
   Link,
   Route // for later
 } from 'react-router-dom'
+import StarRatingComponent from 'react-star-rating-component';
 
 class Card extends React.Component {
 
@@ -45,7 +46,7 @@ class Card extends React.Component {
               ))}
             </Carousel>
             <h2>{name}</h2>
-            <p>{role == "seller" ? stars : ""}</p>
+            <p>{role == "seller" ? <StarRatingComponent name="starRating" starCount={stars} emptyStarColor="#ffc300" editing={false} /> : ""}</p>
             <p>{text}</p>
             <p>{role== "seller" ? "some review" : ""}</p>
             <p>{role == "buyer" ? "Budget: $" + data[i].budget : ""}</p>
