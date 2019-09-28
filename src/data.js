@@ -1,13 +1,13 @@
 export default [
 {  
   "id": "seller2",
-  "name": "SUNNYBEST dresses",
+  "name": "SUNNYBEST Dresses",
   "role": "seller",
   "items": [""],
   "budget": "100",
   "text": "A pretty dress shop",
   "pics": [
-    "https://images.unsplash.com/photo-1514924801778-1db0aba75e9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+    "https://images.unsplash.com/photo-1528812757295-948554d4afe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=922&q=80"
   ],
   "stars": 3,
   "reviews": [
@@ -24,8 +24,8 @@ export default [
   "budget": "100",
   "text": "A lonely flower seller",
   "pics": [
-    "https://images.unsplash.com/photo-1456885284447-7dd4bb8720bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-    "https://images.unsplash.com/photo-1532635270-c09dac425ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+    "https://images.unsplash.com/photo-1487530811176-3780de880c2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80",
+    "https://images.unsplash.com/photo-1452827073306-6e6e661baf57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80"
   ],
   "stars": 3,
   "reviews": [
