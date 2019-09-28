@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { Button, Box, Card, Media, Level, Heading } from "react-bulma-components/full";
+import { Link } from 'react-router-dom';
+
 
 class CheckoutComponent extends Component {
   constructor(props) {
@@ -8,6 +11,7 @@ class CheckoutComponent extends Component {
     } = this.props;
     this.state = {
       user: params.userId,
+      totalCost: 123,
       matches: {}
     };
 
@@ -41,18 +45,19 @@ class CheckoutComponent extends Component {
   render() {
     console.log(this.state);
     return (
-      <div>
-        <h1>{this.state.user}</h1>
-        <h2>{`Total Cost: $${this.state.totalCost}`}</h2>
-        <ul>
-          {Object.keys(this.state.matches).map(sellerId => {
-            return (
-              <li>{`${this.state.matches[sellerId].name}\t\t${this.state.matches[sellerId].text}`}</li>
-            );
-          })}
-        </ul>
-        <button onClick={this.handlePayment}>{"Pay Now"}</button>
-        <button onClick={this.routeToSwipe}>{"Add more items"}</button>
+      <div style={{ margin: "0.75rem" }}>
+        <Heading size={2}>Welcome back, {this.state.user}!</Heading>
+        {Object.keys(this.state.matches).map(sellerId => {
+          return (
+            <Card rounded outlined style={{ borderRadius: "6px", margin: "1.25rem" }}>
+              <Card.Content card-content-padding={"1.5rem"}>
+                  <Heading size={3}>{this.state.matches[sellerId].name}</Heading>
+                  <p>{this.state.matches[sellerId].text}</p>
+              </Card.Content>
+            </Card>
+          );
+        })}
+        <Button><Link>{`Total Cost: $${this.state.totalCost}`}. Checkout now!</Link></Button>
       </div>
     );
   }

@@ -44,9 +44,10 @@ class Card extends React.Component {
               ))}
             </Carousel>
             <h2>{name}</h2>
-            <h5>{role == "seller" ? stars : ""}</h5>
+            <p>{role == "seller" ? stars : ""}</p>
             <p>{text}</p>
             <p>{role== "seller" ? "some review" : ""}</p>
+            <p>{role == "buyer" ? "Budget: $" + data[i].budget : ""}</p>
             <button><Link to={"/profile/" + id}>More info</Link></button>
           </div>
         </animated.div>
