@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
   }
   
@@ -13,10 +13,9 @@
     font-family: Raleway, sans-serif;
     position: fixed;
     overflow: hidden;
-  }
+  } */
   
-  #root {
-    background: salmon;
+  /* #root {
     position: fixed;
     overflow: hidden;
     width: 100%;
@@ -24,9 +23,9 @@
     cursor: url("https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png")
         39 39,
       auto;
-  }
+  } */
   
-  #root > div > div {
+  #root > div > div.deck {
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -36,7 +35,7 @@
     justify-content: center;
   }
   
-  #root > div > div > div { 
+  #root > div > div.deck > div { 
   /* .card { */
     padding: 5px;
     background-color: white;
@@ -53,34 +52,34 @@
       0 10px 10px -10px rgba(50, 50, 73, 0.3);
   }
   
-  img {
+  .deck img {
     height: 380px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
   
-  button[aria-label="previous"],
-  button[aria-label="next"] {
+  .deck button[aria-label="previous"],
+  .deck button[aria-label="next"] {
     background: salmon !important;
     color: black !important;
   }
   
-  h2 {
+  .deck h2 {
     display: inline-block;
     margin-right: 10px;
   }
   
-  h2:nth-of-type(2) {
+  .deck h2:nth-of-type(2) {
     opacity: 0.7;
     font-size: 1.35rem;
   }
   
-  h5 {
+  .deck h5 {
     margin-top: -15px;
     margin-left: 2px;
     color: lightgray;
   }
-  h5:last-of-type {
+  .deck h5:last-of-type {
     color: darkgray;
   }
   
@@ -98,4 +97,8 @@
   
   .slider-control-bottomcenter > ul > li > button {
     color: salmon !important;
+  }
+
+  .App .expanded {
+    height: 100vh !important;
   }

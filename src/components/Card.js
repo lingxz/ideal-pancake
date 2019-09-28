@@ -4,13 +4,20 @@ import { animated, interpolate } from "react-spring/hooks";
 import Carousel from "nuka-carousel";
 
 class Card extends React.Component {
+
+  cardClassNames() {
+    let names = [];
+    if (this.props.expanded) names.push("expanded");
+    return names.join(' ');
+  }
+  
   render() {
-    const { i, x, y, rot, scale, trans, bind, data } = this.props;
-    // const { name, age, distance, text, pics } = data[i];
-    const { name, text, pics } = data[i];
+    const { i, x, y, rot, scale, trans, bind, data, expanded } = this.props;
+    const { name, text, stars, reviews, pics } = data[i];
 
     return (
       <animated.div
+        class="deck"
         key={i}
         style={{
           transform: interpolate(
@@ -35,6 +42,8 @@ class Card extends React.Component {
             {/* <h2>{age}</h2> */}
             {/* <h5>{distance}</h5> */}
             <h5>{text}</h5>
+            <h5>{stars}</h5>
+            <p>some review</p>
           </div>
         </animated.div>
       </animated.div>

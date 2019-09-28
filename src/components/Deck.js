@@ -3,7 +3,6 @@ import { useSprings } from "react-spring/hooks";
 import { useGesture } from "react-with-gesture";
 
 import Card from "./Card";
-// import data from "../data.js";
 import { matchTwoPeople } from "../utils";
 
 import "../styles/Deck.css";
@@ -31,6 +30,8 @@ function Deck(superProps) {
     from: from(i)
   }));
 
+
+
   const bind = useGesture(
     ({
       args: [index],
@@ -46,7 +47,7 @@ function Deck(superProps) {
 
       if (!down && trigger) gone.add(index);
 
-      set(i => {
+      set(i => {      
         if (index !== i) return;
         const isGone = gone.has(index);
 
@@ -87,6 +88,7 @@ function Deck(superProps) {
       trans={trans}
       data={data}
       bind={bind}
+      expanded={true}
     />
   ));
 }
