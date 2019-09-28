@@ -10,7 +10,7 @@ import CheckoutComponent from './CheckoutComponent';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
       <ul>
             <li>
