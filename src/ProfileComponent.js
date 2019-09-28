@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGift, faDollarSign } from '@fortawesome/free-solid-svg-icons'
-import { Button, Box, Card, Media, Level } from "react-bulma-components/full";
+import { Button, Box, Card, Media, Level, Heading } from "react-bulma-components/full";
 import { link } from 'fs';
 
 library.add(faGift, faDollarSign);
@@ -41,8 +41,9 @@ class ProfileComponent extends Component {
                     <Level>
                         <Level.Item>
                             <Card.Content card-content-padding={"1.5rem"}>
-                                <h1>{this.state.profile.name}</h1>
-                                <h2><FontAwesomeIcon icon="dollar-sign" />{this.state.profile.budget}</h2>
+                                <Heading size={1}>{this.state.profile.name}</Heading>
+                                <p></p>
+                                <Heading renderAs="h2" subtitle size={4}><FontAwesomeIcon icon="dollar-sign" />{this.state.profile.budget}</Heading>
                                 {this.state.profile.items.map(item => {
                                     return (
                                         <Media key={item.id}>
@@ -50,12 +51,8 @@ class ProfileComponent extends Component {
                                         </Media>
                                     )
                                 })}
+                                <Button>Match!</Button>
                             </Card.Content>
-                        </Level.Item>
-                    </Level>
-                    <Level>
-                        <Level.Item>
-                            <Button>Match!</Button>
                         </Level.Item>
                     </Level>
                 </Card>
