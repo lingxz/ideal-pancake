@@ -38,7 +38,7 @@ class ProfileComponent extends Component {
                 <Card>
                     <Level>
                         <Level.Item>
-                            <Card.Image src={this.state.profile.profile_picture} alt="profile picture" ratio='1by1' style={{ maxWidth: 320 }} />
+                            <Card.Image src={this.state.profile.profile_picture} alt="profile picture" ratio='1by1' style={{ maxWidth: 320, paddingTop: "1.5rem"}} />
                         </Level.Item>
                     </Level>
                     <Level>
