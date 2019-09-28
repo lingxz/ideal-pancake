@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGift, faDollarSign } from '@fortawesome/free-solid-svg-icons'
+import { Button, Columns, Container, Card, Media } from "react-bulma-components/full";
 
 library.add(faGift, faDollarSign);
 
@@ -29,15 +30,20 @@ class ProfileComponent extends Component {
 
     render() {
         return (
-            <div>
-                <h1>{this.state.profile.name}</h1>
-                <h2><FontAwesomeIcon icon="dollar-sign" />{this.state.profile.budget}</h2>
-                <div>
+            <Container>
+                <Card>
+                    <h1>{this.state.profile.name}</h1>
+                    <h2><FontAwesomeIcon icon="dollar-sign" />{this.state.profile.budget}</h2>
                     {this.state.profile.items.map(item => {
-                        return <div key={item.id}><FontAwesomeIcon icon="gift" />{item.name}</div>
+                        return (
+                            <Media key={item.id}>
+                                <Media.Item position="left"><FontAwesomeIcon icon="gift" /></Media.Item><Media.Item>{item.name}</Media.Item>
+                            </Media>
+                        )
                     })}
-                </div>
-            </div>
+                    <Button>Match!</Button>
+                </Card>
+            </Container>
         )
     }
 }
