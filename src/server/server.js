@@ -26,7 +26,7 @@ app.get('/ping', function (req, res) {
 
 app.get('/user/:userid/profile', function(req, res) {
   console.log("Getting profile for user " + req.params.userid)
-  const path = "../public/user/" + req.params.userid + "/profile.json";
+  const path = getUserProfilePath(req.params.userid);
   if (fs.existsSync(path)) {
     const result = JSON.parse(fs.readFileSync(path).toString());
     console.log(result);
@@ -38,14 +38,36 @@ app.get('/user/:userid/profile', function(req, res) {
 
 app.post('/user/:userid/profile', function(req, res) {
   console.log("Updating profile for user " + req.params.userid);
-  const folderPath = "../public/user/" + req.params.userid;
+  const folderPath = getUserProfileFolder(req.params.userid);
   if (!fs.existsSync(folderPath)) {
     fs.mkdirSync(folderPath);
   }
   console.log(req.body);
-  // console.log(req);
   fs.writeFileSync(folderPath + "/profile.json", JSON.stringify(req.body));
   res.send("OK")  
 })
+
+app.get("/sellers", function(req, res) {
+  const reuslt = getDirectories("../public/user/");
+  console.log("result");
+})
+
+app.get("/basket/:userid", function(req, res) {
+  res.json({"items": []});
+})
+
+function getDirectories(path) {
+  return fs.readdirSync(path).filter(function (file) {
+    return fs.statSync(path+'/'+file).isDirectory();
+  });
+}
+
+const getUserProfilePath = (userId) => {
+  return "../public/user/" + userId + "/profile.json";
+}
+
+const getUserProfileFolder = (userId) => {
+  return "../public/user/" + userId;
+}
 
 app.listen(process.env.PORT || 8080);
