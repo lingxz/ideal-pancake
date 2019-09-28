@@ -23,6 +23,9 @@ const trans = (r, s) =>
 function Deck(superProps) {
 
   const [gone] = useState(() => new Set());
+  // const [gone, set] = useState(new Set());
+  // const [expanded, set] = useState(false)
+  // const gone = new Set();
   const data = superProps.cards
 
   const [props, set] = useSprings(data.length, i => ({
@@ -34,7 +37,7 @@ function Deck(superProps) {
 
   const bind = useGesture(
     ({
-      args: [index],
+      args: [index, expanded],
       down,
       delta: [xDelta],
       distance,
@@ -63,7 +66,7 @@ function Deck(superProps) {
 
         const rot = xDelta / 100 + (isGone ? dir * 10 * velocity : 0);
 
-        const scale = down ? 1.1 : 1;
+        const scale = down ? 1 : 1;
         return {
           x,
           rot,
@@ -72,7 +75,6 @@ function Deck(superProps) {
           config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 }
         };
       });
-
       if (!down && gone.size === data.length)
         setTimeout(() => gone.clear() || set(i => to(i)), 600);
     }
