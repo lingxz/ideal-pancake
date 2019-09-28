@@ -1,21 +1,24 @@
 {
-    "id": "buyer",
-    "name": "Azure Lin",
-    "role": "buyer",
-    "profile_picture": "/assets/azure-lin.jpg",
-    "items": [
-        {
-            "id": 1,
-            "name": "Flower Delivery"
-        },
-        {
-            "id": 2,
-            "name": "Chocolates"
-        },
-        {
-            "id": 3,
-            "name": "Hotpot"
-        }
-    ],
-    "budget": "100"
+ "id": "buyer",
+ "name": "Azure Lin",
+ "role": "buyer",
+ "profile_picture": "/assets/azure-lin.jpg",
+ "items": [
+  {
+   "id": 1,
+   "name": "Flower Delivery"
+  },
+  {
+   "id": 2,
+   "name": "Chocolates"
+  },
+  {
+   "id": 3,
+   "name": "Hotpot"
+  }
+ ],
+ "budget": "100",
+ "selected": [
+  "seller1"
+ ]
 }

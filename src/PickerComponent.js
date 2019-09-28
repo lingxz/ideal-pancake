@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Deck from "./components/Deck";
 import data from "./data";
 
-const api_endpoint = "http://localhost:8080";
+const api_endpoint = process.env.API_URL ? process.env.API_URL : "http://localhost:8080";
 
 class PickerComponent extends Component {
 
