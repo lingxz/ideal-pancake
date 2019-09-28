@@ -15,7 +15,10 @@ class CheckoutComponent extends Component {
     this.state = {
       user: params.userId,
       totalCost: 100,
-      matches: {}
+      matches: {},
+      profile: {
+        "name": ""
+      }
     };
 
     const url = `/basket/${params.userId}`;
@@ -35,6 +38,15 @@ class CheckoutComponent extends Component {
         });
       })
       .catch(console.log);
+
+    fetch('/user/' + params.userId + '/profile.json')
+      .then(res => res.json())
+      .then((data) => {
+        if (data.name) {
+          this.setState({ profile: data });
+        }
+      })
+      .catch(console.log)
   }
 
   handlePayment = () => {
@@ -49,7 +61,7 @@ class CheckoutComponent extends Component {
     console.log(this.state);
     return (
       <Card style={{ borderRadius: "6px", margin: "1.25rem", padding: "1rem" }}>
-        <Heading size={2}>Welcome back, {this.state.user}!</Heading>
+        <Heading size={2}>Welcome back, {this.state.profile.name.split(" ")[0]}!</Heading>
         <Table>
           <tbody>
             {Object.keys(this.state.matches).map((sellerId, index) => {
