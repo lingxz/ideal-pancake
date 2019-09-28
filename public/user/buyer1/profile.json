@@ -1,1 +1,13 @@
-{"selected":["buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1","buyer1"]}
+{
+ "id": "buyer1",
+ "name": "Azure Lin 2",
+ "role": "buyer",
+ "items": [
+  "Christmas presents",
+  "Hotpot"
+ ],
+ "budget": "100",
+ "selected": [
+  "seller1"
+ ]
+}

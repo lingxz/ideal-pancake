@@ -55,7 +55,7 @@ function Deck(superProps) {
         const isGone = gone.has(index);
 
         if (isGone === true && dir === 1) {
-          matchTwoPeople(superProps.userId, "buyer1");
+          matchTwoPeople(superProps.userId, data[i].id);
           console.log("swiped right!!");
 
         } else if (isGone === true && dir === -1) {

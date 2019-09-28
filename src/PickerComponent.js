@@ -9,21 +9,31 @@ class PickerComponent extends Component {
   constructor(props) {
       super(props);
       const { match: { params } } = this.props;
-      let endpoint = "/sellers";
+
+      let filteredData = [];
+      if (params.userId.startsWith("buyer")) {
+        // is a buyer
+        filteredData = data.filter(item => item.id.startsWith("seller"));
+      } else {
+        // is a seller, wants to see buyer
+        filteredData = data.filter(item => item.id.startsWith("buyer"));
+      }
+
       this.state = { 
         "userId": params.userId,
-        "cards": data
+        "cards": filteredData
       }
-      if (params.userId.startsWith("seller")) {
-        endpoint = "/buyers";
-      }
-      fetch(api_endpoint + endpoint)
-          .then(res => res.json())
-          .then((data) => {
-            console.log("cards", data.results);
-            this.setState({ "cards": data.results })
-          })
-          .catch(console.log)
+      // let endpoint = "/sellers";
+      // if (params.userId.startsWith("seller")) {
+      //   endpoint = "/buyers";
+      // }
+      // fetch(api_endpoint + endpoint)
+      //     .then(res => res.json())
+      //     .then((data) => {
+      //       console.log("cards", data.results);
+      //       this.setState({ "cards": data.results })
+      //     })
+      //     .catch(console.log)
   }
 
   render() {

@@ -102,3 +102,7 @@
   .App .expanded {
     height: 100vh !important;
   }
+  .deck p {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+  }

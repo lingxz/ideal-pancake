@@ -43,12 +43,13 @@ app.post('/user/:userid/profile', function(req, res) {
     fs.mkdirSync(folderPath);
   }
   console.log(req.body);
-  fs.writeFileSync(folderPath + "/profile.json", JSON.stringify(req.body));
+  fs.writeFileSync(folderPath + "/profile.json", JSON.stringify(req.body, null, 1));
   res.send("OK")  
 })
 
 app.get("/everyone", function(req, res) {
   const userids = getDirectories("../public/user/");
+  const results = [];
   userids.forEach((userid) => {
     const profile = JSON.parse(fs.readFileSync(getUserProfilePath(userid)).toString());
     results.push(profile);
@@ -98,7 +99,7 @@ app.post('/basket/:userid', function(req, res) {
     fs.mkdirSync(folderPath);
   }
   console.log(req.body);
-  fs.writeFileSync(path, JSON.stringify(req.body));
+  fs.writeFileSync(path, JSON.stringify(req.body, null, 1));
   res.send("OK")  
 })
 

@@ -18,11 +18,11 @@ class Card extends React.Component {
   
   render() {
     const { i, x, y, rot, scale, trans, bind, data, expanded } = this.props;
-    const { id, name, text, stars, reviews, pics } = data[i];
+    const { id, name, role, text, stars, reviews, pics } = data[i];
 
     return (
       <animated.div
-        class="deck"
+        className="deck"
         key={i}
         style={{
           transform: interpolate(
@@ -44,10 +44,10 @@ class Card extends React.Component {
               ))}
             </Carousel>
             <h2>{name}</h2>
-            <h5>{text}</h5>
-            <h5>{stars}</h5>
-            <p>some review</p>
-            <button><Link to={"/profile/" + id}>Home</Link></button>
+            <h5>{role == "seller" ? stars : ""}</h5>
+            <p>{text}</p>
+            <p>{role== "seller" ? "some review" : ""}</p>
+            <button><Link to={"/profile/" + id}>More info</Link></button>
           </div>
         </animated.div>
       </animated.div>
