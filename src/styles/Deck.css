@@ -53,10 +53,12 @@
       0 10px 10px -10px rgba(50, 50, 73, 0.3);
   }
   
-  .deck img {
-    height: 380px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  .cropped {
+    height: 320px;
+    width: 320px;
+    object-fit: scale-down;
+    object-position: center;
+    border-radius: 6px;
   }
   
   .deck button[aria-label="previous"],

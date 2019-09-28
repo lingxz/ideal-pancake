@@ -42,13 +42,13 @@ class Card extends React.Component {
           <BulmaCard>
             <Carousel>
               {pics.map((pic, index) => (
-                <img src={pic} key={index} alt="profilePicture" />
+                  <img src={pic} key={index} alt="profilePicture" className="cropped" />
               ))}
             </Carousel>
             <h2>{name}</h2>
             <p>{role == "seller" ? <StarRatingComponent name="starRating" starCount={stars} emptyStarColor="#ffc300" editing={false} /> : ""}</p>
             <p>{text}</p>
-            <p>{role== "seller" ? "some review" : ""}</p>
+            <p>{role == "seller" ? "some review" : ""}</p>
             <p>{role == "buyer" ? "Budget: $" + data[i].budget : ""}</p>
             <Button><Link to={"/profile/" + id}>More info</Link></Button>
           </BulmaCard>
