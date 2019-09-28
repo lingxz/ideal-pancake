@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGift, faDollarSign } from '@fortawesome/free-solid-svg-icons'
 import { Button, Box, Card, Media, Level, Heading } from "react-bulma-components/full";
 import Rating from "react-rating";
-import { link } from 'fs';
 
 library.add(faGift, faDollarSign);
 
@@ -41,38 +40,36 @@ class ProfileComponent extends Component {
 
     render() {
         return (
-            <Box box-padding={"1.25rem"} style={{ height: "100vh", backgroundColor: "#fe5722" }} >
-                <Card style={{borderRadius: "6px"}}>
-                    <Level>
-                        <Level.Item>
-                            <Card.Image src={this.state.profile.profile_picture} alt="profile picture" ratio='1by1' style={{ maxWidth: 320, paddingTop: "1.5rem" }} />
-                        </Level.Item>
-                    </Level>
-                    <Level>
-                        <Level.Item>
-                            <Card.Content card-content-padding={"1.5rem"}>
-                                <Heading size={1}>{this.state.profile.name}</Heading>
-                                <p></p>
-                                {this.state.profile.rating &&
-                                    <Rating initialRating={this.state.profile.rating} />
-                                }
-                                {this.state.profile.budget &&
-                                    <Heading renderAs="h2" subtitle size={4}><FontAwesomeIcon icon="dollar-sign" />{this.state.profile.budget}</Heading>
-                                }
-                                {this.state.profile.items.map(item => {
-                                    return (
-                                        <Media key={item.id}>
-                                            <Media.Item position="left"><FontAwesomeIcon icon="gift" /></Media.Item><Media.Item>{item.name}</Media.Item>
-                                        </Media>
-                                    )
-                                })}
-                                <p></p>
-                                <Button>Match!</Button>
-                            </Card.Content>
-                        </Level.Item>
-                    </Level>
-                </Card>
-            </Box>
+            <Card style={{ borderRadius: "6px", margin: "1.25rem" }}>
+                <Level>
+                    <Level.Item>
+                        <Card.Image src={this.state.profile.profile_picture} alt="profile picture" ratio='1by1' style={{ maxWidth: 320, paddingTop: "1.5rem" }} />
+                    </Level.Item>
+                </Level>
+                <Level>
+                    <Level.Item>
+                        <Card.Content card-content-padding={"1.5rem"}>
+                            <Heading size={1}>{this.state.profile.name}</Heading>
+                            <p></p>
+                            {this.state.profile.rating &&
+                                <Rating initialRating={this.state.profile.rating} />
+                            }
+                            {this.state.profile.budget &&
+                                <Heading renderAs="h2" subtitle size={4}><FontAwesomeIcon icon="dollar-sign" />{this.state.profile.budget}</Heading>
+                            }
+                            {this.state.profile.items.map(item => {
+                                return (
+                                    <Media key={item.id}>
+                                        <Media.Item position="left"><FontAwesomeIcon icon="gift" /></Media.Item><Media.Item>{item.name}</Media.Item>
+                                    </Media>
+                                )
+                            })}
+                            <p></p>
+                            <Button>Match!</Button>
+                        </Card.Content>
+                    </Level.Item>
+                </Level>
+            </Card>
         )
     }
 }
