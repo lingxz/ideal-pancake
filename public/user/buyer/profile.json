@@ -1,4 +1,7 @@
 {
     "id": "buyer",
-    "name": "Azure Lin"
+    "name": "Azure Lin",
+    "role": "buyer",
+    "items": ["Flower Delivery", "Chocolates", "Hotpot"],
+    "budget": "100"
 }
