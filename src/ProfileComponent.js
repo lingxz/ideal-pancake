@@ -3,6 +3,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGift, faDollarSign } from '@fortawesome/free-solid-svg-icons'
 import { Button, Box, Card, Media, Level, Heading } from "react-bulma-components/full";
+import { Link } from 'react-router-dom';
 import Rating from "react-rating";
 
 library.add(faGift, faDollarSign);
@@ -13,6 +14,7 @@ class ProfileComponent extends Component {
         super(props);
         this.state = {
             profile: {
+                "id": "buyer",
                 "name": "user",
                 "role": "buyer",
                 "budget": "",
@@ -65,7 +67,7 @@ class ProfileComponent extends Component {
                                 )
                             })}
                             <p></p>
-                            <Button>Match!</Button>
+                            <Button><Link to={"/picker/" + this.state.profile.id}>Match!</Link></Button>
                         </Card.Content>
                     </Level.Item>
                 </Level>
