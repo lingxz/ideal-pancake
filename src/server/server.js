@@ -60,7 +60,7 @@ app.get("/sellers", function(req, res) {
 
 app.get("/buyers", function(req, res) {
   const userids = getDirectories("../public/user/");
-  const seller_ids = userids.filter((userid) => userid.startsWith("buyer"));
+  const buyer_ids = userids.filter((userid) => userid.startsWith("buyer"));
   const results = []
   buyer_ids.forEach((buyer_id) => {
     const profile = JSON.parse(fs.readFileSync(getUserProfilePath(buyer_id)).toString());

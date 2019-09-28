@@ -12,13 +12,6 @@ export function matchTwoPeople(user1, user2) {
       } else {
         data["selected"].push(user2)
       }
-
-      console.log("here::::", data)
-      data = {
-        "test": "blabla",
-        "test2": "blabla2"
-      }
-
       fetch(api_endpoint + '/user/' + user1 + '/profile', {
         mode: 'no-cors',
         headers: {
@@ -34,7 +27,5 @@ export function matchTwoPeople(user1, user2) {
 }
 
 function checkMatch(seller_id) {
-
+  
 }
-
-// export default matchSellerBuyer;

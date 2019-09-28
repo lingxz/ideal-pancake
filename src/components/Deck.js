@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, Component } from "react";
 import { useSprings } from "react-spring/hooks";
 import { useGesture } from "react-with-gesture";
 
 import Card from "./Card";
-import data from "../data.js";
+// import data from "../data.js";
 import { matchTwoPeople } from "../utils";
 
 import "../styles/Deck.css";
@@ -21,8 +21,10 @@ const trans = (r, s) =>
   `perspective(1500px) rotateX(30deg) rotateY(${r /
     10}deg) rotateZ(${r}deg) scale(${s})`;
 
-function Deck() {
+function Deck(superProps) {
+
   const [gone] = useState(() => new Set());
+  const data = superProps.cards
 
   const [props, set] = useSprings(data.length, i => ({
     ...to(i),
@@ -44,13 +46,12 @@ function Deck() {
 
       if (!down && trigger) gone.add(index);
 
-
       set(i => {
         if (index !== i) return;
         const isGone = gone.has(index);
 
         if (isGone === true && dir === 1) {
-          matchTwoPeople("seller2", "buyer1");
+          matchTwoPeople(superProps.userId, "buyer1");
           console.log("swiped right!!");
 
         } else if (isGone === true && dir === -1) {
@@ -75,7 +76,6 @@ function Deck() {
         setTimeout(() => gone.clear() || set(i => to(i)), 600);
     }
   );
-
   return props.map(({ x, y, rot, scale }, i) => (
     <Card
       key={i}
