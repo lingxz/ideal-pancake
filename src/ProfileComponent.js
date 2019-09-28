@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGift, faDollarSign } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faGift, faDollarSign);
 
 class ProfileComponent extends Component {
 
@@ -26,15 +31,15 @@ class ProfileComponent extends Component {
         return (
             <div>
                 <h1>{this.state.profile.name}</h1>
-                <h2>${this.state.profile.budget}</h2>
-                <ul>
+                <h2><FontAwesomeIcon icon="dollar-sign" />{this.state.profile.budget}</h2>
+                <div>
                     {this.state.profile.items.map(item => {
-                        return <li>{item}</li>
+                        return <div key={item.id}><FontAwesomeIcon icon="gift" />{item.name}</div>
                     })}
-            </ul>
+                </div>
             </div>
-                )
-            }
-        }
+        )
+    }
+}
 
 export default ProfileComponent;
