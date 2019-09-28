@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGift, faDollarSign } from '@fortawesome/free-solid-svg-icons'
 import { Button, Box, Card, Media, Level, Heading } from "react-bulma-components/full";
 import { Link } from 'react-router-dom';
-import Rating from "react-rating";
+import StarRatingComponent from 'react-star-rating-component';
 
 library.add(faGift, faDollarSign);
 
@@ -22,6 +22,11 @@ class ProfileComponent extends Component {
                 "items": []
             }
         };
+
+        const SVGIcon = (props) =>
+            <svg className={props.className} pointerEvents="none">
+                <use xlinkHref={props.href} />
+            </svg>;
 
         const { match: { params } } = this.props;
         fetch('/user/' + params.userId + '/profile.json')
@@ -54,7 +59,7 @@ class ProfileComponent extends Component {
                             <Heading size={1}>{this.state.profile.name}</Heading>
                             <p></p>
                             {this.state.profile.rating &&
-                                <Rating initialRating={this.state.profile.rating} />
+                                <StarRatingComponent name="starRating" starCount={this.state.profile.rating} emptyStarColor="#ffc300" editing={false} />
                             }
                             {this.state.profile.budget &&
                                 <Heading renderAs="h2" subtitle size={4}><FontAwesomeIcon icon="dollar-sign" />{this.state.profile.budget}</Heading>
