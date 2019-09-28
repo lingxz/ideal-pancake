@@ -17,10 +17,10 @@ function App() {
               <Link to="/profile"> Profile </Link>
             </li>
             <li>
-              <Link to="/picker"> About </Link>
+              <Link to="/picker"> Picker </Link>
             </li>
             <li>
-              <Link to="/checkout"> Team </Link>
+              <Link to="/checkout"> Checkout </Link>
             </li>
           </ul>
 
