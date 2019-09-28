@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from "react";
+import Deck from "./components/Deck";
 
-function PickerComponent (){
- return <h1>Picker Component</h1>
-}
+const PickerComponent = () => <Deck />;
 
 export default PickerComponent;
