@@ -14,19 +14,19 @@ function App() {
       <div className="App">
       <ul>
             <li>
-              <Link to="/profile"> Profile </Link>
+              <Link to="/profile/buyer"> Buyer Profile </Link>
             </li>
             <li>
-              <Link to="/picker"> Picker </Link>
+              <Link to="/picker/buyer"> Picker </Link>
             </li>
             <li>
-              <Link to="/checkout"> Checkout </Link>
+              <Link to="/checkout/buyer"> Checkout </Link>
             </li>
           </ul>
 
-        <Route exact path='/profile' component={ProfileComponent}></Route>
-        <Route exact path='/picker' component={PickerComponent}></Route>
-        <Route exact path='/checkout' component={CheckoutComponent}></Route>
+        <Route exact path='/profile/:userId' component={ProfileComponent}></Route>
+        <Route exact path='/picker/:userId' component={PickerComponent}></Route>
+        <Route exact path='/checkout/:userId' component={CheckoutComponent}></Route>
       </div>
     </Router>
   );
