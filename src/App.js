@@ -1,7 +1,9 @@
 import React from 'react';
-import { HashRouter as Router,
+import {
+  HashRouter as Router,
   Route,
-  Link } from 'react-router-dom'
+  Link
+} from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
 import ProfileComponent from './ProfileComponent';
@@ -12,17 +14,17 @@ function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
-      <ul>
-            <li>
-              <Link to="/profile/buyer"> Buyer Profile </Link>
-            </li>
-            <li>
-              <Link to="/picker/buyer"> Picker </Link>
-            </li>
-            <li>
-              <Link to="/checkout/buyer"> Checkout </Link>
-            </li>
-          </ul>
+        <ul>
+          <li>
+            <Link to="/profile/buyer"> Buyer Profile </Link>
+          </li>
+          <li>
+            <Link to="/picker/buyer"> Picker </Link>
+          </li>
+          <li>
+            <Link to="/checkout/buyer"> Checkout </Link>
+          </li>
+        </ul>
 
         <Route exact path='/profile/:userId' component={ProfileComponent}></Route>
         <Route exact path='/picker/:userId' component={PickerComponent}></Route>
