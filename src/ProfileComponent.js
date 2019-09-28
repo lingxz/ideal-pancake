@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGift, faDollarSign } from '@fortawesome/free-solid-svg-icons'
-import { Button, Box, Card, Media, Level, Heading } from "react-bulma-components/full";
+import { Button, Card, Media, Level, Heading } from "react-bulma-components/full";
 import { Link } from 'react-router-dom';
 import StarRatingComponent from 'react-star-rating-component';
 
@@ -22,11 +22,6 @@ class ProfileComponent extends Component {
                 "items": []
             }
         };
-
-        const SVGIcon = (props) =>
-            <svg className={props.className} pointerEvents="none">
-                <use xlinkHref={props.href} />
-            </svg>;
 
         const { match: { params } } = this.props;
         fetch('/user/' + params.userId + '/profile.json')

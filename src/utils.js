@@ -42,13 +42,13 @@ function checkMatch() {
       let matches = [];
       let currentUser = data.results[i].id;
       let selected = data.results[i].selected;
-      if (selected == undefined) { selected = [];}
+      if (selected === undefined) { selected = [];}
       for (let j = 0; j < selected.length; j++) {
-        if (useridToUserMap.get(selected[j]) == undefined) {
+        if (useridToUserMap.get(selected[j]) === undefined) {
           continue
         }
         let other_selected = useridToUserMap.get(selected[j]).selected;
-        if (other_selected == undefined) {
+        if (other_selected === undefined) {
           continue
         }
         if (other_selected.includes(currentUser)) {
