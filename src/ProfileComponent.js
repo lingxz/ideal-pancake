@@ -3,6 +3,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGift, faDollarSign } from '@fortawesome/free-solid-svg-icons'
 import { Button, Box, Card, Media, Level, Heading } from "react-bulma-components/full";
+import Rating from "react-rating";
 import { link } from 'fs';
 
 library.add(faGift, faDollarSign);
@@ -15,7 +16,7 @@ class ProfileComponent extends Component {
             profile: {
                 "name": "user",
                 "role": "buyer",
-                "budget": "100",
+                "budget": "",
                 "profile_picture": "https://bulma.io/images/placeholders/480x480.png",
                 "items": []
             }
@@ -25,11 +26,17 @@ class ProfileComponent extends Component {
         fetch('/user/' + params.userId + '/profile.json')
             .then(res => res.json())
             .then((data) => {
-                if (data.name && data.budget) {
+                if (data.name) {
                     this.setState({ profile: data });
                 }
             })
             .catch(console.log)
+    }
+
+    hasBudget() {
+        if (this.state.profile.budget) {
+            return <Heading renderAs="h2" subtitle size={4}><FontAwesomeIcon icon="dollar-sign" />{this.state.profile.budget}</Heading>
+        }
     }
 
     render() {
@@ -38,7 +45,7 @@ class ProfileComponent extends Component {
                 <Card>
                     <Level>
                         <Level.Item>
-                            <Card.Image src={this.state.profile.profile_picture} alt="profile picture" ratio='1by1' style={{ maxWidth: 320, paddingTop: "1.5rem"}} />
+                            <Card.Image src={this.state.profile.profile_picture} alt="profile picture" ratio='1by1' style={{ maxWidth: 320, paddingTop: "1.5rem" }} />
                         </Level.Item>
                     </Level>
                     <Level>
@@ -46,7 +53,12 @@ class ProfileComponent extends Component {
                             <Card.Content card-content-padding={"1.5rem"}>
                                 <Heading size={1}>{this.state.profile.name}</Heading>
                                 <p></p>
-                                <Heading renderAs="h2" subtitle size={4}><FontAwesomeIcon icon="dollar-sign" />{this.state.profile.budget}</Heading>
+                                {this.state.profile.rating &&
+                                    <Rating initialRating={this.state.profile.rating} />
+                                }
+                                {this.state.profile.budget &&
+                                    <Heading renderAs="h2" subtitle size={4}><FontAwesomeIcon icon="dollar-sign" />{this.state.profile.budget}</Heading>
+                                }
                                 {this.state.profile.items.map(item => {
                                     return (
                                         <Media key={item.id}>
@@ -54,6 +66,7 @@ class ProfileComponent extends Component {
                                         </Media>
                                     )
                                 })}
+                                <p></p>
                                 <Button>Match!</Button>
                             </Card.Content>
                         </Level.Item>
