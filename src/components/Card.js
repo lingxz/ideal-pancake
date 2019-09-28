@@ -18,7 +18,7 @@ class Card extends React.Component {
   
   render() {
     const { i, x, y, rot, scale, trans, bind, data, expanded } = this.props;
-    const { name, text, stars, reviews, pics } = data[i];
+    const { id, name, text, stars, reviews, pics } = data[i];
 
     return (
       <animated.div
@@ -47,7 +47,7 @@ class Card extends React.Component {
             <h5>{text}</h5>
             <h5>{stars}</h5>
             <p>some review</p>
-            <button><Link to='/profile/buyer'>Home</Link></button>
+            <button><Link to={"/profile/" + id}>Home</Link></button>
           </div>
         </animated.div>
       </animated.div>
