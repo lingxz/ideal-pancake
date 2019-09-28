@@ -1,4 +1,4 @@
-FROM node:7.9.0-alpine
+FROM node:10.16.3-alpine
 
 # Set a working directory
 WORKDIR .
@@ -10,7 +10,6 @@ RUN npm install --production
 
 # Copy application files
 COPY . .
-EXPOSE 3000
+EXPOSE 8080
 
-RUN cd src
-CMD [ "node", "server/server.js" ]
+CMD [ "node", "src/server/server.js" ]

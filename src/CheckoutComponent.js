@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, Box, Card, Media, Level, Heading } from "react-bulma-components/full";
 import { Link } from 'react-router-dom';
 
+const api_endpoint = process.env.NODE_ENV === 'production' ? "https://shopee.theconfused.me" : "http://localhost:8080";
 
 class CheckoutComponent extends Component {
   constructor(props) {
@@ -15,13 +16,13 @@ class CheckoutComponent extends Component {
       matches: {}
     };
 
-    const url = `/basket/${params.userId}`;
+    const url = api_endpoint + `/basket/${params.userId}`;
     console.log(url);
     fetch(url)
       .then(res => res.json())
       .then(data => {
         data.matches.map(sellerId => {
-          fetch(`/user/${sellerId}/profile`)
+          fetch(api_endpoint + `/user/${sellerId}/profile`)
             .then(res => res.json())
             .then(data => {
               let newMatches = this.state.matches;
