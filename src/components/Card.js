@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { animated, interpolate } from "react-spring/hooks";
 import Carousel from "nuka-carousel";
-import { Card as BulmaCard, Button } from "react-bulma-components/full";
+import { Card as BulmaCard, Button, Heading } from "react-bulma-components/full";
 import {
   BrowserRouter as Router,
   Link,
@@ -39,15 +39,16 @@ class Card extends React.Component {
             // transform: interpolate([rot, scale], trans)
           }}
         >
-          <BulmaCard>
+          <BulmaCard style={{boxShadow: "none"}}>
             <Carousel>
               {pics.map((pic, index) => (
                   <img src={pic} key={index} alt="profilePicture" className="cropped" />
               ))}
             </Carousel>
-            <h2>{name}</h2>
-            <p>{role == "seller" ? <StarRatingComponent name="starRating" starCount={stars} emptyStarColor="#ffc300" editing={false} /> : ""}</p>
-            <p>{text}</p>
+            <Heading size={4}>{name}</Heading>
+            {role == "seller" ? <StarRatingComponent name="starRating" starCount={stars} emptyStarColor="#ffc300" editing={false} /> : ""}
+            <br />
+            {text}
             <p>{role == "seller" ? "some review" : ""}</p>
             <p>{role == "buyer" ? "Budget: $" + data[i].budget : ""}</p>
             <Button><Link to={"/profile/" + id}>More info</Link></Button>
