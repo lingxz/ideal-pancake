@@ -2,6 +2,7 @@
     "id": "buyer",
     "name": "Azure Lin",
     "role": "buyer",
+    "profile_picture": "/assets/azure-lin.jpg",
     "items": [
         {
             "id": 1,

@@ -1,1 +1,8 @@
-{"test":"blabla","test2":"blabla2"}
+{
+    "id": "seller2",
+    "name": "DeliChoc",
+    "role": "seller",
+    "profile_picture": "/assets/delichoc.jpg",
+    "items": [],
+    "budget": "100"
+}
