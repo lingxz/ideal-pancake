@@ -70,7 +70,27 @@ app.get("/buyers", function(req, res) {
 })
 
 app.get("/basket/:userid", function(req, res) {
-  res.json({"items": []});
+  console.log("Getting basket for user " + req.params.userid)
+  const path = getUserBasketPath(req.params.userid);
+  if (fs.existsSync(path)) {
+    const result = JSON.parse(fs.readFileSync(path).toString());
+    console.log(result);
+    res.json(result);
+  } else {
+    res.json({"items": []})
+  }
+})
+
+app.post('/basket/:userid', function(req, res) {
+  console.log("Updating basket for user " + req.params.userid);
+  const folderPath = getUserProfileFolder(req.params.userid);
+  const path = getUserBasketPath(req.params.userid);
+  if (!fs.existsSync(folderPath)) {
+    fs.mkdirSync(folderPath);
+  }
+  console.log(req.body);
+  fs.writeFileSync(path, JSON.stringify(req.body));
+  res.send("OK")  
 })
 
 function getDirectories(path) {
@@ -81,6 +101,10 @@ function getDirectories(path) {
 
 const getUserProfilePath = (userId) => {
   return "../public/user/" + userId + "/profile.json";
+}
+
+const getUserBasketPath = (userId) => {
+  return "../public/user/" + userId + "/basket.json";
 }
 
 const getUserProfileFolder = (userId) => {
