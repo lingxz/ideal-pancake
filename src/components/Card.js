@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { animated, interpolate } from "react-spring/hooks";
 import Carousel from "nuka-carousel";
+import { Card as BulmaCard, Button } from "react-bulma-components/full";
 import {
   BrowserRouter as Router,
   Link,
@@ -15,7 +16,7 @@ class Card extends React.Component {
     if (this.props.expanded) names.push("expanded");
     return names.join(' ');
   }
-  
+
   render() {
     const { i, x, y, rot, scale, trans, bind, data, expanded } = this.props;
     const { id, name, role, text, stars, reviews, pics } = data[i];
@@ -37,7 +38,7 @@ class Card extends React.Component {
             // transform: interpolate([rot, scale], trans)
           }}
         >
-          <div className="card">
+          <BulmaCard>
             <Carousel>
               {pics.map((pic, index) => (
                 <img src={pic} key={index} alt="profilePicture" />
@@ -48,8 +49,8 @@ class Card extends React.Component {
             <p>{text}</p>
             <p>{role== "seller" ? "some review" : ""}</p>
             <p>{role == "buyer" ? "Budget: $" + data[i].budget : ""}</p>
-            <button><Link to={"/profile/" + id}>More info</Link></button>
-          </div>
+            <Button><Link to={"/profile/" + id}>More info</Link></Button>
+          </BulmaCard>
         </animated.div>
       </animated.div>
     );
