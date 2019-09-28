@@ -48,8 +48,25 @@ app.post('/user/:userid/profile', function(req, res) {
 })
 
 app.get("/sellers", function(req, res) {
-  const reuslt = getDirectories("../public/user/");
-  console.log("result");
+  const userids = getDirectories("../public/user/");
+  const seller_ids = userids.filter((userid) => userid.startsWith("seller"));
+  const results = []
+  seller_ids.forEach((seller_id) => {
+    const profile = JSON.parse(fs.readFileSync(getUserProfilePath(seller_id)).toString());
+    results.push(profile);
+  });
+  return res.json({"results": results});
+})
+
+app.get("/buyers", function(req, res) {
+  const userids = getDirectories("../public/user/");
+  const seller_ids = userids.filter((userid) => userid.startsWith("buyer"));
+  const results = []
+  buyer_ids.forEach((buyer_id) => {
+    const profile = JSON.parse(fs.readFileSync(getUserProfilePath(buyer_id)).toString());
+    results.push(profile);
+  });
+  return res.json({"results": results});
 })
 
 app.get("/basket/:userid", function(req, res) {
