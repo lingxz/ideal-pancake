@@ -56,8 +56,7 @@ export default [
   ],
   "text": "Super indecisive person, surprise me!",
   "pics": [
-    "https://images.unsplash.com/photo-1456885284447-7dd4bb8720bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-    "https://images.unsplash.com/photo-1532635270-c09dac425ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+    "/assets/azure-lin.jpg"
   ],
   "budget": "100",
   "selected": [
@@ -66,7 +65,7 @@ export default [
  },
  {
   "id": "buyer1",
-  "name": "Azure Lin 2",
+  "name": "Rose Tan",
   "role": "buyer",
   "text": "want some cool presents",
   "items": [
@@ -74,7 +73,7 @@ export default [
    "Hotpot"
   ],
   "pics": [
-    "https://images.unsplash.com/photo-1514924801778-1db0aba75e9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+    "https://images.unsplash.com/photo-1562293803-4a30b3b0614a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
   ],
   "budget": "100",
   "selected": [
