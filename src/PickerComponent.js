@@ -42,14 +42,16 @@ class PickerComponent extends Component {
   render() {
     return (
       <div>
-        <Spring from={{ value: -1000 }} to={{ value: 0 }} config={{delay: 3000}}>
-          {
-            props =>
-            <Link to={"/checkout/" + this.state.userId}>
-              <Notification style={{ marginTop: props.value, position: "fixed", top: "10px", zIndex: "101", marginLeft: "12%", marginRight: "12%", width: "75%", padding: "0.5rem" }}>You have been matched!</Notification>
-            </Link>
-          }
-        </Spring>
+        {this.state.userId.startsWith("buyer") &&
+          <Spring from={{ value: -1000 }} to={{ value: 0 }} config={{ delay: 3000 }}>
+            {
+              props =>
+                <Link to={"/checkout/" + this.state.userId}>
+                  <Notification style={{ marginTop: props.value, position: "fixed", top: "10px", zIndex: "101", marginLeft: "12%", marginRight: "12%", width: "75%", padding: "0.5rem" }}>You have been matched!</Notification>
+                </Link>
+            }
+          </Spring>
+        }
         <Deck userId={this.state.userId} cards={this.state.cards} />
       </div>
     )
