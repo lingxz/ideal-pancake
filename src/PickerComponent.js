@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Deck from "./components/Deck";
 import data from "./data";
+import { Notification } from "react-bulma-components/full";
+import { Link } from 'react-router-dom';
+import { Spring } from 'react-spring';
 
 const api_endpoint = process.env.API_URL ? process.env.API_URL : "http://localhost:8080";
 
@@ -37,7 +40,19 @@ class PickerComponent extends Component {
   }
 
   render() {
-    return <Deck userId={this.state.userId} cards={this.state.cards} />
+    return (
+      <div>
+        <Spring from={{ value: -1000 }} to={{ value: 0 }} config={{delay: 3000}}>
+          {
+            props =>
+            <Link to={"/checkout/" + this.state.userId}>
+              <Notification style={{ marginTop: props.value, position: "fixed", top: "10px", zIndex: "101", marginLeft: "12%", marginRight: "12%", width: "75%", padding: "0.5rem" }}>You have been matched!</Notification>
+            </Link>
+          }
+        </Spring>
+        <Deck userId={this.state.userId} cards={this.state.cards} />
+      </div>
+    )
   }
 }
 

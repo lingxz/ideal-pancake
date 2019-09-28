@@ -26,7 +26,7 @@
     background-color: #fe5722;
   }
   
-  #root > div > div.deck {
+  #root > div > div > div.deck {
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -36,7 +36,7 @@
     justify-content: center;
   }
   
-  #root > div > div.deck > div { 
+  #root > div > div > div.deck > div { 
   /* .card { */
     padding: 5px;
     background-color: white;
