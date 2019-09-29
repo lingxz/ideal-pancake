@@ -11,8 +11,10 @@ class RootComponent extends Component {
             <BulmaCard style={{ borderRadius: "6px", margin: "2rem", padding: "2rem" }}>
                 <Heading>Buyer Flow</Heading>
                 <Button><Link to={"/profile/buyer"}>Azure Lin</Link></Button>
+                <Button><Link to={"/profile/buyer1"}>Rose Tan</Link></Button>
                 <Heading>Seller Flow</Heading>
                 <Button><Link to={"/profile/seller1"}>Joyful Petals</Link></Button>
+                <Button><Link to={"/profile/seller3"}>DeliChoc</Link></Button>
             </BulmaCard>
         )
     }
