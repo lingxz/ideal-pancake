@@ -1,21 +1,5 @@
 export default [
 {  
-  "id": "seller2",
-  "name": "SUNNYBEST Dresses",
-  "role": "seller",
-  "items": [""],
-  "budget": "100",
-  "text": "A pretty dress shop",
-  "pics": [
-    "https://images.unsplash.com/photo-1528812757295-948554d4afe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=922&q=80"
-  ],
-  "stars": 3,
-  "reviews": [
-    "great buy",
-    "bad product"
-  ]
-},
-{  
   "id": "seller4",
   "name": "Lucky Hotpot",
   "role": "seller",
@@ -79,5 +63,17 @@ export default [
   "selected": [
    "seller1"
   ]
- }
+ },
+ {
+  "id": "seller3",
+  "name": "DeliChoc",
+  "role": "seller",
+  "profile_picture": "/assets/delichoc.jpg",
+  "pics": [
+    "https://images.unsplash.com/photo-1481391319762-47dff72954d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80",
+    "https://images.unsplash.com/photo-1553452118-621e1f860f43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80"
+  ],
+  "items": [],
+  "rating": 5
+}
 ];

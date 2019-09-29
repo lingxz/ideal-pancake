@@ -32,7 +32,7 @@ class Card extends React.Component {
         <animated.div
           {...bind(i)}
           style={{
-            // transform: interpolate([rot, scale], trans)
+            transform: interpolate([rot, scale], trans)
           }}
         >
           <BulmaCard style={{boxShadow: "none"}}>
