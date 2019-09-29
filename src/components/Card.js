@@ -45,7 +45,7 @@ class Card extends React.Component {
             {role === "seller" ? <StarRatingComponent name="starRating" starCount={stars} emptyStarColor="#ffc300" editing={false} /> : ""}
             <br />
             {text}
-            <p>{role === "seller" ? "some review" : ""}</p>
+            <p>{role === "seller" ? `"${reviews[0]}"` : ""}</p>
             <p>{role === "buyer" ? "Budget: $" + data[i].budget : ""}</p>
             <Button><Link to={"/profile/" + id}>More info</Link></Button>
           </BulmaCard>

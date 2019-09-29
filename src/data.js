@@ -11,6 +11,9 @@ export default [
   ],
   "stars": 3,
   "reviews": [
+    "Yum yum in my tum tum",
+    "Awesome, delicious, 10/10",
+    "You get what you pay"
   ]
 },
 {
@@ -38,7 +41,7 @@ export default [
    "Christmas presents",
    "Hotpot"
   ],
-  "text": "Super indecisive person, surprise me!",
+  "text": "Please help me plan an anniversary surprise!",
   "pics": [
     "/assets/azure-lin.jpg"
   ],
@@ -74,6 +77,10 @@ export default [
     "https://images.unsplash.com/photo-1553452118-621e1f860f43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80"
   ],
   "items": [],
-  "rating": 5
+  "rating": 5,
+  "reviews": [
+    "These chocolates helped me win my girl over, I give it 5/7.",
+    ""
+  ]
 }
 ];
