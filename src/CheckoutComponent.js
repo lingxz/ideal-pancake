@@ -60,7 +60,7 @@ class CheckoutComponent extends Component {
   render() {
     console.log(this.state);
     return (
-      <Card style={{ borderRadius: "6px", margin: "1.25rem", padding: "1rem" }}>
+      <Card style={{ borderRadius: "6px", margin: "2rem", padding: "1rem" }}>
         <Heading size={2}>Welcome back, {this.state.profile.name.split(" ")[0]}!</Heading>
         <Table>
           <tbody>
