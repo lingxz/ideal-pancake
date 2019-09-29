@@ -24,10 +24,10 @@ export default [
     "https://images.unsplash.com/photo-1487530811176-3780de880c2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80",
     "https://images.unsplash.com/photo-1452827073306-6e6e661baf57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80"
   ],
-  "stars": 3,
+  "stars": 4,
   "reviews": [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu nibh tincidunt purus dictum pharetra ut sed sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sed egestas urna, at tempus sapien. Praesent et augue venenatis, bibendum dolor at, porttitor tellus. Ut a pharetra lorem. Quisque accumsan mi vitae mauris iaculis, ac aliquam turpis fringilla. ",
-    "some other review"
+    "They have the beautiful flowers I have ever seen!",
+    "I managed to surprised my boyfriend thanks to Joyful Petals!"
   ]
 },
 {
