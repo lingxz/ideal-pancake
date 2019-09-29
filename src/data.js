@@ -27,6 +27,9 @@ export default [
   ],
   "stars": 3,
   "reviews": [
+    "Awesome, delicious, 10/10",
+    "You get what you pay",
+    "Yum yum in my tum tum"
   ]
 },
 {
