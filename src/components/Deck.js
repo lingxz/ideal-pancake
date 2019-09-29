@@ -1,4 +1,4 @@
-import React, { useState, Component } from "react";
+import React, { useState } from "react";
 import { useSprings } from "react-spring/hooks";
 import { useGesture } from "react-with-gesture";
 

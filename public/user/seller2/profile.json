@@ -1,12 +1,12 @@
 {
   "id": "seller2",
-  "name": "SUNNYBEST dresses",
+  "name": "SUNNYBEST Dresses",
   "role": "seller",
-  "profile_picture": "https://images.unsplash.com/photo-1514924801778-1db0aba75e9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+  "profile_picture": "https://images.unsplash.com/photo-1528812757295-948554d4afe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=922&q=80",
   "items": [],
   "rating": 5,
   "text": "A pretty dress shop",
   "pics": [
-    "https://images.unsplash.com/photo-1514924801778-1db0aba75e9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+    "https://images.unsplash.com/photo-1528812757295-948554d4afe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=922&q=80"
   ]
 }

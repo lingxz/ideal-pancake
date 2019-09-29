@@ -1,13 +1,20 @@
 {
- "id": "buyer1",
- "name": "Azure Lin 2",
- "role": "buyer",
- "items": [
-  "Christmas presents",
-  "Hotpot"
- ],
- "budget": "100",
- "selected": [
-  "seller1"
- ]
+    "id": "buyer1",
+    "name": "Rose Tan",
+    "role": "buyer",
+    "profile_picture": "https://images.unsplash.com/photo-1562293803-4a30b3b0614a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+    "items": [
+        {
+            "id": 1,
+            "name": "Christmas Presents"
+        },
+        {
+            "id": 1,
+            "name": "Hotpot"
+        }
+    ],
+    "budget": "150",
+    "selected": [
+        "seller1"
+    ]
 }

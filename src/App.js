@@ -2,10 +2,8 @@ import React from 'react';
 import {
   HashRouter as Router,
   Route,
-  Link,
   Switch
-} from 'react-router-dom'
-import logo from './logo.svg';
+} from 'react-router-dom';
 import './App.css';
 import ProfileComponent from './ProfileComponent';
 import PickerComponent from './PickerComponent';
