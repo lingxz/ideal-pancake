@@ -11,9 +11,9 @@ export default [
   ],
   "stars": 3,
   "reviews": [
+    "Yum yum in my tum tum",
     "Awesome, delicious, 10/10",
-    "You get what you pay",
-    "Yum yum in my tum tum"
+    "You get what you pay"
   ]
 },
 {
