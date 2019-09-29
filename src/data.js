@@ -34,7 +34,7 @@ export default [
   ]
 },
 {
-  "id": "buyer1",
+  "id": "buyer",
   "name": "Azure Lin",
   "role": "buyer",
   "items": [
