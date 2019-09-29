@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Deck from "./components/Deck";
 import data from "./data";
-import { Notification } from "react-bulma-components/full";
+import { Notification, Media, Content, Image } from "react-bulma-components/full";
 import { Link } from 'react-router-dom';
 import { Spring } from 'react-spring';
 
@@ -47,7 +47,18 @@ class PickerComponent extends Component {
             {
               props =>
                 <Link to={"/checkout/" + this.state.userId}>
-                  <Notification style={{ marginTop: props.value, position: "fixed", top: "10px", zIndex: "101", marginLeft: "12%", marginRight: "12%", width: "75%", padding: "0.5rem" }}>You have been matched!</Notification>
+                  <Notification style={{ marginTop: props.value, position: "fixed", top: "10px", zIndex: "101", marginLeft: "12%", marginRight: "12%", width: "75%", padding: "0.5rem" }}>
+                    <Media>
+                      <Media.Item renderAs="figure" position="left">
+                        <Image renderAs="p" size={24} alt="16x16" src="new-logo192.png" />
+                      </Media.Item>
+                      <Media.Item>
+                        <Content style={{color: "#000000", fontSize: "14px"}}>
+                          You have been matched!
+                        </Content>
+                      </Media.Item>
+                    </Media>
+                  </Notification>
                 </Link>
             }
           </Spring>
