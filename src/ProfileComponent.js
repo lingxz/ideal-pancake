@@ -42,7 +42,7 @@ class ProfileComponent extends Component {
 
     render() {
         return (
-            <Card style={{ borderRadius: "6px", margin: "1.25rem" }}>
+            <Card style={{ borderRadius: "6px", margin: "2rem" }}>
                 <Level>
                     <Level.Item>
                         <Card.Image src={this.state.profile.profile_picture} alt="profile picture" ratio='1by1' style={{ maxWidth: 320, paddingTop: "1.5rem" }} />
